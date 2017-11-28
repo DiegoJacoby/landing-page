@@ -1,0 +1,17 @@
+.container {
+	position: relative;
+	width: 100%;
+	max-width: 1201px;
+	margin: 0 auto;
+	display: table;
+}
+
+/* Declarando essa classe para reaproveitamento de efeito no hover */
+.opacidade {
+	opacity: 1;
+	transition: opacity 500ms;
+
+	&:hover {
+		opacity: 0.7;	
+	}
+}

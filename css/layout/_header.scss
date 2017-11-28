@@ -1,0 +1,164 @@
+header {
+	width: 100%;
+	position: absolute;
+	display: table;
+	top: 20px;
+	z-index: 3;
+
+	.container {
+		padding: 0 45px;
+	}
+
+	.menu-mobile {
+		display: none;
+		float: left;
+		margin-top: 10px;
+	}	
+
+	&:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 200%;
+		top: -20px;
+		left: 0;
+		background: rgba(0, 0, 0, 0.7);
+		display: none;
+	}
+
+	h1 {
+		float: left;
+	}
+
+	nav.menu-principal {
+		width: auto;
+		position: relative;
+		float: right;
+		margin: 10px 0 30px 0;
+
+		ul {
+			list-style: none;
+
+			li {
+				position: relative;
+				display: inline-block;
+				margin-right: 38px;
+				font-size: 1.2em;
+				font-weight: 400;
+				color: #fff;
+				transition: color 300ms;
+				padding: 10px 0 10px 0;
+				text-transform: uppercase;
+
+				&.tem-submenu {
+					background-image: url(../images/seta-menu.png);
+					background-repeat: no-repeat;
+					background-position: right 14px;
+					padding-right: 15px;
+				}
+
+				ul.submenu {
+					position: absolute;
+					width: 100%;
+					min-width: 100px;
+				    list-style: none;
+				    background: $vermelho;
+				    padding: 10px;
+				    top: 36px;
+				    left: -6px;
+				    display: none;
+				    border-radius: 5px;
+
+					 li {
+					 	width: 100%;
+						float: left;
+						font-size: 1.000em;
+
+						&:last-of-type {
+							margin-bottom: 0;
+						}
+
+						&:hover {
+							color: #fff;
+							@extend .opacidade;
+						}
+					 }
+
+					 &:before {
+					 	content: '';
+						position: absolute;
+						left: 22px;
+						top: -10px;
+						width: 0;
+						height: 0;
+						border-left: 17px solid transparent;
+						border-right: 17px solid transparent;
+						border-bottom: 17px solid #f3270a;
+					 }
+				}
+
+				&:hover {
+					color: $vermelho;
+
+					&.tem-submenu {
+						background-image: none;
+					}
+
+					.submenu {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	.busca {
+		position: relative;
+		float: right;
+		min-width: 171px;
+		margin-top: 8px;
+
+		input {
+			width: 100%;
+			padding: 10px 40px 10px 10px;
+			outline: none;
+			border: 0;
+			border-radius: 5px;
+			background: rgba(255, 255, 255, 0.2);
+			color: #fff;
+
+			&::-webkit-input-placeholder {
+				color: inherit;
+			}
+
+			&::-moz-placeholder {
+				color: inherit;
+			}
+
+			&:-ms-input-placeholder {
+				color: inherit;
+			}
+
+			&:-moz-placeholder {
+				color: inherit;
+			}
+		}
+
+		button {
+			position: absolute;
+			top: -2px;
+			right: 0;
+			border: 0;
+			border-radius: 5px;
+			padding: 12px 18px;
+			outline: none;
+			text-indent: -9999px;
+			background-image: url(../images/busca.png);
+			background-repeat: no-repeat;
+			background-color: $vermelho; 
+			background-position: center;
+			cursor: pointer;
+			@extend .opacidade;
+		}
+	}
+}
